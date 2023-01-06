@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "@openautomate/root",
   "private": true,
   "workspaces": [
     "packages/*"

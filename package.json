@@ -6,5 +6,10 @@
   ],
   "devDependencies": {
     "lerna": "^6.3.0"
+  },
+  "scripts": {
+    "start": "lerna run --stream --parallel --scope=@*/{web,backend} start",
+    "start:web": "lerna run --stream --scope=@*/web start",
+    "start:backend": "lerna run --stream --scope=@*/backend start"
   }
 }

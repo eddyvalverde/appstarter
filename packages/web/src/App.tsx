@@ -87,7 +87,7 @@ const App: React.FC = () => {
           <div className="navbar-nav ml-auto">
             <li className="nav-item">
               <Link to={"/profile"} className="nav-link">
-                {currentUser.username}
+                {currentUser.email}
               </Link>
             </li>
             <li className="nav-item">

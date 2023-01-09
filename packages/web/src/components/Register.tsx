@@ -41,7 +41,7 @@ const Register: React.FC = () => {
 
     register(email, password, firstName, lastName).then(
       (response) => {
-        setMessage("Now go to Login and use credentials provided");
+        setMessage("Now go to Login and use credentials you provided");
         setSuccessful(true);
       },
       (error) => {

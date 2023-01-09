@@ -1,3 +1,6 @@
 [submodule "packages/backend"]
 	path = packages/backend
 	url = https://github.com/eddyvalverde/nestjs-boilerplate.git
+[submodule "packages/web"]
+	path = packages/web
+	url = https://github.com/eddyvalverde/frontendstarter.git

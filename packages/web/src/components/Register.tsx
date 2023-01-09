@@ -12,6 +12,8 @@ const Register: React.FC = () => {
   const initialValues: IUser = {
     email: "",
     password: "",
+    firstName: "",
+    lastName: "",
   };
 
   const validationSchema = Yup.object().shape({
@@ -28,12 +30,16 @@ const Register: React.FC = () => {
           val.toString().length <= 40
       )
       .required("This field is required!"),
+    firstName: Yup.string()
+      .required("This field is required!"),
+    lastName: Yup.string()
+      .required("This field is required!"),
   });
 
   const handleRegister = (formValue: IUser) => {
-    const {  email, password } = formValue;
+    const {  email, password, firstName, lastName } = formValue;
 
-    register(email, password).then(
+    register(email, password, firstName, lastName).then(
       (response) => {
         setMessage(response.data.message);
         setSuccessful(true);
@@ -68,6 +74,26 @@ const Register: React.FC = () => {
           <Form>
             {!successful && (
               <div>
+
+                <div className="form-group">
+                  <label htmlFor="firstName"> Name </label>
+                  <Field name="firstName" type="firstName" className="form-control" />
+                  <ErrorMessage
+                    name="firstName"
+                    component="div"
+                    className="alert alert-danger"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="lastName"> Lastname </label>
+                  <Field name="lastName" type="lastName" className="form-control" />
+                  <ErrorMessage
+                    name="lastName"
+                    component="div"
+                    className="alert alert-danger"
+                  />
+                </div>
 
                 <div className="form-group">
                   <label htmlFor="email"> Email </label>
